@@ -1272,3 +1272,18 @@
     line-height: 1.6;
     font-style: italic;
   }
+
+  /* ── DINING NAV LINK ── */
+  .nav-link-dining {
+    color: var(--gold) !important;
+    border: 1px solid rgba(180,147,77,0.3);
+    padding: 4px 12px !important;
+    letter-spacing: 0.12em;
+    transition: background 0.2s, border-color 0.2s !important;
+  }
+  .nav-link-dining:hover {
+    background: rgba(180,147,77,0.08);
+    border-color: var(--gold);
+    color: var(--gold) !important;
+  }
+  .nav-link-dining::after { display: none !important; }

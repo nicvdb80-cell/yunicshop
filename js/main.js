@@ -45,6 +45,7 @@
 
   // Wire up nav links
   document.querySelectorAll('.nav-link').forEach(function(link) {
+    if (link.classList.contains('nav-link-dining')) return; // external link, skip
     link.addEventListener('click', function(e) {
       e.preventDefault();
       openTab(this.getAttribute('data-tab'));
