@@ -1104,3 +1104,171 @@
     .catalog-grid { grid-template-columns: 1fr; }
     .catalog-modal { padding: 24px 20px; }
   }
+
+  /* ── JOURNEY FLIP CARDS ── */
+  .journey-card.flip-card {
+    perspective: 1200px;
+    cursor: pointer;
+    background: none;
+    min-height: 240px;
+  }
+  .journey-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 240px;
+    transform-style: preserve-3d;
+    transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
+  }
+  .journey-card.flip-card.flipped .journey-card-inner {
+    transform: rotateY(180deg);
+  }
+  .journey-card-front,
+  .journey-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 0;
+    padding: 28px 24px;
+  }
+  .journey-card-front {
+    background: var(--white);
+    border: 1px solid rgba(180,147,77,0.12);
+    display: flex;
+    flex-direction: column;
+  }
+  .journey-card-back {
+    background: var(--teal);
+    border: 1px solid var(--teal);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .journey-tap-hint {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: auto;
+    padding-top: 16px;
+    opacity: 0.7;
+  }
+  .journey-back-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    color: var(--gold-light);
+    margin-bottom: 14px;
+    letter-spacing: 0.05em;
+  }
+  .journey-back-items {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 14px 0;
+  }
+  .journey-back-items li {
+    font-size: 11.5px;
+    color: rgba(247,243,236,0.8);
+    line-height: 1.6;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    padding-left: 12px;
+    position: relative;
+  }
+  .journey-back-items li::before {
+    content: '◈';
+    position: absolute;
+    left: 0;
+    color: var(--gold-light);
+    font-size: 8px;
+    top: 6px;
+  }
+  .journey-back-note {
+    font-size: 10px;
+    color: rgba(247,243,236,0.45);
+    letter-spacing: 0.1em;
+    margin-top: 4px;
+  }
+
+  /* ── GIFT FLIP CARDS ── */
+  .gift-card.flip-card {
+    perspective: 1200px;
+    cursor: pointer;
+    background: none;
+  }
+  .gift-card-inner {
+    position: relative;
+    width: 100%;
+    min-height: 420px;
+    transform-style: preserve-3d;
+    transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
+  }
+  .gift-card.flip-card.flipped .gift-card-inner {
+    transform: rotateY(180deg);
+  }
+  .gift-card-front-flip,
+  .gift-card-back-flip {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    overflow: hidden;
+  }
+  .gift-card-front-flip {
+    background: var(--white);
+    border: 1px solid rgba(180,147,77,0.12);
+    display: flex;
+    flex-direction: column;
+  }
+  .gift-card-back-flip {
+    background: var(--teal);
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 28px 24px;
+  }
+  .gift-tap-hint {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 10px;
+    opacity: 0.7;
+  }
+  .gift-back-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--gold-light);
+    margin-bottom: 14px;
+  }
+  .gift-back-items {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 12px 0;
+  }
+  .gift-back-items li {
+    font-size: 11.5px;
+    color: rgba(247,243,236,0.82);
+    line-height: 1.6;
+    padding: 5px 0 5px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    position: relative;
+  }
+  .gift-back-items li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--gold-light);
+    font-size: 7px;
+    top: 8px;
+  }
+  .gift-back-note {
+    font-size: 11px;
+    color: rgba(247,243,236,0.5);
+    line-height: 1.6;
+    font-style: italic;
+  }
