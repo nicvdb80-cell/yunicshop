@@ -25,6 +25,12 @@
     <a class="nav-link" data-tab="journal">Journal</a>
     <a class="nav-link" data-tab="contact">Contact</a>
   </nav>
+  <button class="basket-btn" onclick="openBasket()" aria-label="Shopping basket">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+    </svg>
+    <span class="basket-count" id="basketCount">0</span>
+  </button>
 </header>
 
 <!-- ── HERO ── -->
@@ -181,37 +187,41 @@
     </div>
 
     <div class="shop-cats">
-      <div class="shop-cat">
+      <div class="shop-cat" onclick="openCatalog('textiles')">
         <div class="cat-icon">◈</div>
         <div>
           <div class="cat-name">Craft &amp; Textiles</div>
           <div class="cat-desc">Ikat, batik, hand-woven cloth from Java, Bali, Sumba &amp; Flores</div>
           <div class="cat-price">From Rp 350.000</div>
         </div>
+        <div class="cat-arrow">→</div>
       </div>
-      <div class="shop-cat">
+      <div class="shop-cat" onclick="openCatalog('objects')">
         <div class="cat-icon">◈</div>
         <div>
           <div class="cat-name">Objects</div>
           <div class="cat-desc">Ceramics, baskets, carved wood, brass &amp; bronze pieces</div>
           <div class="cat-price">From Rp 280.000</div>
         </div>
+        <div class="cat-arrow">→</div>
       </div>
-      <div class="shop-cat">
+      <div class="shop-cat" onclick="openCatalog('wearables')">
         <div class="cat-icon">◈</div>
         <div>
           <div class="cat-name">Wearables</div>
           <div class="cat-desc">Scarves, sarongs, handmade jewellery from village artisans</div>
           <div class="cat-price">From Rp 220.000</div>
         </div>
+        <div class="cat-arrow">→</div>
       </div>
-      <div class="shop-cat">
+      <div class="shop-cat" onclick="openCatalog('home')">
         <div class="cat-icon">◈</div>
         <div>
           <div class="cat-name">For the Home</div>
           <div class="cat-desc">Cushions, runners, table pieces, vessels for the considered interior</div>
           <div class="cat-price">From Rp 450.000</div>
         </div>
+        <div class="cat-arrow">→</div>
       </div>
     </div>
 
@@ -413,5 +423,39 @@
 
 <script src="js/main.js"></script>
 
+
+<!-- ── CATALOG MODAL ── -->
+<div class="catalog-overlay" id="catalogOverlay" onclick="closeCatalog()"></div>
+<div class="catalog-modal" id="catalogModal">
+  <div class="catalog-modal-header">
+    <div>
+      <div class="catalog-modal-label" id="catalogLabel">Category</div>
+      <h3 class="catalog-modal-title" id="catalogTitle">Products</h3>
+    </div>
+    <button class="catalog-close" onclick="closeCatalog()">✕</button>
+  </div>
+  <div class="catalog-grid" id="catalogGrid"></div>
+</div>
+
+<!-- ── BASKET PANEL ── -->
+<div class="basket-overlay" id="basketOverlay" onclick="closeBasket()"></div>
+<div class="basket-panel" id="basketPanel">
+  <div class="basket-header">
+    <h3>Your Basket</h3>
+    <button class="catalog-close" onclick="closeBasket()">✕</button>
+  </div>
+  <div class="basket-items" id="basketItems">
+    <p class="basket-empty">Your basket is empty.</p>
+  </div>
+  <div class="basket-footer" id="basketFooter" style="display:none">
+    <div class="basket-total">
+      Total: <span id="basketTotal">Rp 0</span>
+    </div>
+    <button class="basket-whatsapp" onclick="checkoutWhatsApp()">
+      Order via WhatsApp →
+    </button>
+    <p class="basket-note">We'll confirm availability and arrange payment with you directly.</p>
+  </div>
+</div>
 </body>
 </html>
