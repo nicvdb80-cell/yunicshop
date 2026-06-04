@@ -1291,14 +1291,14 @@
   /* ── DINING BANNER ── */
   .dining-banner {
     background: var(--teal);
-    padding: 80px 40px;
+    padding: 48px 40px;
   }
   .dining-banner-inner {
     max-width: 1100px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 60px;
     align-items: center;
   }
   .dining-eyebrow {
@@ -1306,33 +1306,33 @@
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--gold-light);
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
   .dining-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(36px, 5vw, 54px);
+    font-size: clamp(28px, 3.5vw, 38px);
     font-weight: 300;
     color: var(--ivory);
     line-height: 1.15;
-    margin-bottom: 24px;
+    margin-bottom: 14px;
   }
   .dining-title em {
     font-style: italic;
     color: var(--gold-light);
   }
   .dining-body {
-    font-size: 14px;
-    line-height: 1.9;
+    font-size: 13px;
+    line-height: 1.8;
     color: rgba(247,243,236,0.7);
-    margin-bottom: 32px;
+    margin-bottom: 20px;
     max-width: 440px;
   }
   .dining-details {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 36px;
-    padding: 24px 0;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding: 16px 0;
     border-top: 1px solid rgba(180,147,77,0.25);
     border-bottom: 1px solid rgba(180,147,77,0.25);
   }
@@ -1349,7 +1349,7 @@
     min-width: 80px;
   }
   .dining-detail-value {
-    font-size: 13px;
+    font-size: 12px;
     color: rgba(247,243,236,0.75);
   }
   .dining-cta {
@@ -1357,9 +1357,9 @@
     background: var(--gold);
     color: var(--teal);
     text-decoration: none;
-    padding: 14px 32px;
+    padding: 11px 26px;
     font-family: 'Jost', sans-serif;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     font-weight: 500;
@@ -1376,7 +1376,7 @@
   }
   .dining-img-main {
     width: 100%;
-    aspect-ratio: 4/5;
+    aspect-ratio: 16/9;
     overflow: hidden;
   }
   .dining-img-main img {
@@ -1388,32 +1388,32 @@
   }
   .dining-quote {
     position: absolute;
-    bottom: -24px;
-    left: -24px;
+    bottom: -20px;
+    left: -20px;
     background: var(--ivory);
     color: var(--teal);
-    padding: 24px 28px;
+    padding: 18px 22px;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 15px;
+    font-size: 13px;
     font-style: italic;
     line-height: 1.8;
-    max-width: 260px;
+    max-width: 220px;
     border-left: 3px solid var(--gold);
   }
   .dining-quote-mark {
-    font-size: 40px;
+    font-size: 32px;
     color: var(--gold);
     line-height: 0;
-    vertical-align: -16px;
+    vertical-align: -12px;
     margin-right: 4px;
     font-style: normal;
   }
 
   @media (max-width: 768px) {
-    .dining-banner { padding: 56px 24px; }
+    .dining-banner { padding: 40px 24px; }
     .dining-banner-inner {
       grid-template-columns: 1fr;
-      gap: 48px;
+      gap: 32px;
     }
     .dining-banner-right { display: none; }
   }
