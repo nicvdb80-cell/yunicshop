@@ -45,7 +45,7 @@
     background: #F7F3EC;
     border-bottom: 1px solid rgba(180,147,77,0.2);
     padding: 0 48px;
-    height: 72px;
+    height: 52px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -58,8 +58,8 @@
   }
   .logo-main {
     font-family: 'Cinzel Decorative', serif;
-    font-size: 22px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 400;
     color: var(--teal);
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -109,7 +109,7 @@
   .hero {
     position: relative;
     z-index: 1;
-    padding-top: 72px;
+    padding-top: 52px;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -758,6 +758,81 @@
     .featured-products { grid-template-columns: 1fr; }
   }
 
+
+  /* ── HAMBURGER MENU ── */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 200;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 1.5px;
+    background: var(--teal);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 52px;
+    right: 0;
+    width: 240px;
+    background: #F7F3EC;
+    border-left: 1px solid rgba(163,112,76,0.2);
+    border-bottom: 1px solid rgba(163,112,76,0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0 16px;
+    z-index: 150;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    box-shadow: -4px 4px 24px rgba(13,44,34,0.08);
+  }
+
+  .mobile-menu.open {
+    transform: translateX(0);
+  }
+
+  .mobile-menu .nav-link {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 14px 28px;
+    border-bottom: 1px solid rgba(163,112,76,0.1);
+    cursor: pointer;
+    transition: color 0.2s, background 0.2s;
+    font-weight: 500;
+  }
+  .mobile-menu .nav-link:last-child { border-bottom: none; }
+  .mobile-menu .nav-link:hover { color: var(--teal); background: rgba(13,44,34,0.03); }
+  .mobile-menu .nav-link.active { color: var(--teal); }
+
+  /* Hide old nav styles */
+  nav { display: none; }
+  .tab-header { display: none; }
+
 </style>
 </head>
 <body>
@@ -768,13 +843,18 @@
     <span class="logo-main">Yunic</span>
     <span class="logo-sub">Craft Shop · Indonesian Journey</span>
   </div>
-  <nav id="mainNav">
-    <a class="nav-link" data-tab="journey">Journey</a>
-    <a class="nav-link" data-tab="shop">Shop</a>
-    <a class="nav-link" data-tab="gifts">Gift Sets</a>
-    <a class="nav-link" data-tab="journal">Journal</a>
-    <a class="nav-link" data-tab="contact">Contact</a>
-  </nav>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="nav-link" data-tab="journey" onclick="closeMenu()">Journey</a>
+    <a class="nav-link" data-tab="shop" onclick="closeMenu()">Shop</a>
+    <a class="nav-link" data-tab="gifts" onclick="closeMenu()">Gift Sets</a>
+    <a class="nav-link" data-tab="journal" onclick="closeMenu()">Journal</a>
+    <a class="nav-link" data-tab="contact" onclick="closeMenu()">Contact</a>
+  </div>
 </header>
 
 <!-- ── HERO ── -->
@@ -801,14 +881,7 @@
 <!-- ── TAB SECTION ── -->
 <section class="main-tabs">
 
-  <!-- Tab Buttons -->
-  <div class="tab-header" id="tabHeader">
-    <button class="tab-btn active" data-tab="journey">Journey</button>
-    <button class="tab-btn" data-tab="shop">Shop</button>
-    <button class="tab-btn" data-tab="gifts">Gift Sets</button>
-    <button class="tab-btn" data-tab="journal">Journal</button>
-    <button class="tab-btn" data-tab="contact">Contact</button>
-  </div>
+  <!-- Tab Buttons removed - using hamburger menu -->
 
   <!-- JOURNEY PANEL -->
   <div class="panel active" id="panel-journey">
@@ -1171,6 +1244,28 @@
       openTab(this.getAttribute('data-tab'));
     });
   });
+
+  // ── HAMBURGER ──
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+
+  function closeMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
 </script>
 
 </body>
