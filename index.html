@@ -1,634 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yunic Craft Shop · Indonesian Journey</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yunic Dining</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap');
 
-<link rel="stylesheet" href="css/style.css">
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #2e1a08;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.4rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.6rem, 9vw, 4.2rem);
+      font-weight: 300;
+      color: #f5f0e8;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: #c8922a;
+    }
+
+    p {
+      font-family: 'Jost', sans-serif;
+      font-size: clamp(0.78rem, 2.5vw, 0.9rem);
+      font-weight: 300;
+      color: rgba(245,240,232,0.45);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .rule {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .rule span {
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: rgba(200,146,42,0.35);
+    }
+    .rule i {
+      color: #c8922a;
+      font-style: normal;
+      font-size: 0.4rem;
+      opacity: 0.5;
+    }
+  </style>
 </head>
 <body>
-
-<!-- ── HEADER ── -->
-<header>
-  <div class="logo">
-    <span class="logo-main">Yunic</span>
-    <span class="logo-sub">Craft Shop · Indonesian Journey</span>
+  <div class="wrap">
+    <h1>Something <em>beautiful</em><br>is coming</h1>
+    <div class="rule"><span></span><i>◆</i><span></span></div>
+    <p>Every thing amazing takes time</p>
   </div>
-  <nav id="mainNav">
-    <a class="nav-link" data-tab="journey">Journey</a>
-    <a class="nav-link" data-tab="shop">Shop</a>
-    <a class="nav-link" data-tab="gifts">Gift Sets</a>
-    <a class="nav-link" data-tab="journal">Journal</a>
-    <a class="nav-link" data-tab="contact">Contact</a>
-    <a class="nav-link nav-link-dining" href="https://yunicdining.com" target="_blank" rel="noopener">Dining ↗</a>
-  </nav>
-  <button class="basket-btn" onclick="openBasket()" aria-label="Shopping basket">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
-    </svg>
-    <span class="basket-count" id="basketCount">0</span>
-  </button>
-</header>
-
-<!-- ── HERO ── -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-eyebrow">Yunic Indonesian Journey · Craft Shop &amp; Dining</div>
-    <h1>Objects from the journey.<br><em>Taste the story.</em></h1>
-    <p class="hero-tagline">Where craft, travel, and the table meet.</p>
-    <p class="hero-body">Yunic Craft Shop is where the journey meets the table. Indonesian craft objects, handmade pieces, and curated gifts — each one connected to the Yunic Indonesian Journey and Yunic Dining experience.</p>
-    <div class="hero-ctas">
-      <button class="btn-primary" onclick="openTab('shop')">Explore the Shop</button>
-      <button class="btn-outline" onclick="openTab('journey')">Our Journey</button>
-    </div>
-  </div>
-</section>
-
-
-
-<!-- ── DINING BANNER ── -->
-<section class="dining-banner">
-  <div class="dining-banner-inner">
-    <div class="dining-banner-left">
-      <div class="dining-eyebrow">Sister Experience</div>
-      <h2 class="dining-title">The table is<br><em>set for you.</em></h2>
-      <p class="dining-body">Yunic Dining is a private Indonesian table in Bali — a slow meal built around ingredients from the journey, served on the objects we bring back, in a space that tells the story of the archipelago. A natural continuation of everything the shop stands for.</p>
-      <div class="dining-details">
-        <div class="dining-detail">
-          <span class="dining-detail-label">Format</span>
-          <span class="dining-detail-value">Private dining · 2 to 8 guests</span>
-        </div>
-        <div class="dining-detail">
-          <span class="dining-detail-label">Menu</span>
-          <span class="dining-detail-value">Indonesian tasting menu · 5 to 7 courses</span>
-        </div>
-        <div class="dining-detail">
-          <span class="dining-detail-label">Location</span>
-          <span class="dining-detail-value">Bali, Indonesia</span>
-        </div>
-      </div>
-      <a class="dining-cta" href="https://yunicdining.com" target="_blank" rel="noopener">
-        Visit Yunic Dining ↗
-      </a>
-    </div>
-    <div class="dining-banner-right">
-      <div class="dining-image-stack">
-        <div class="dining-img-main">
-          <img src="images/img02.jpg" alt="Yunic Dining table">
-        </div>
-        <div class="dining-quote">
-          <span class="dining-quote-mark">"</span>
-          The craft on the table.<br>The story in the food.<br>The journey in every dish.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── TAB SECTION ── -->
-<section class="main-tabs">
-
-  <!-- Tab Buttons -->
-
-
-  <!-- JOURNEY PANEL -->
-  <div class="panel active" id="panel-journey">
-    <div class="panel-eyebrow">The Indonesian Journey</div>
-    <h2 class="panel-title">Where every object<br><em>carries its story.</em></h2>
-    <p class="panel-lead">We travel deep into Indonesia — through villages, markets, and family workshops — to find objects made with intention. Each piece arrives carrying its story, its maker, its place.</p>
-
-    <div class="journey-grid">
-      <div class="journey-card flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="journey-card-inner">
-          <div class="journey-card-front">
-            <span class="journey-icon">◈</span>
-            <div class="dest">Bali</div>
-            <div class="dest-sub">Ikat &amp; natural dye</div>
-            <div class="dest-desc">Hand-woven textiles from the villages of Tenganan and Sidemen, dyed with indigo and earth pigments.</div>
-            <div class="journey-tap-hint">Tap to explore →</div>
-          </div>
-          <div class="journey-card-back">
-            <div class="journey-back-title">What we find in Bali</div>
-            <ul class="journey-back-items"><li>Double-ikat geringsing cloth from Tenganan — one of the world's rarest textiles</li><li>Indigo-dyed scarves from Sidemen valley weavers</li><li>Hand-carved silver jewellery from Celuk village</li><li>Coconut shell bowls and lontar palm objects</li></ul>
-            <div class="journey-back-note">Best season: April – October</div>
-            <div class="journey-tap-hint" style="color:rgba(247,243,236,0.4)">Tap to close</div>
-          </div>
-        </div>
-      </div>
-      <div class="journey-card flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="journey-card-inner">
-          <div class="journey-card-front">
-            <span class="journey-icon">◈</span>
-            <div class="dest">Sumba</div>
-            <div class="dest-sub">Hinggi &amp; tribal weave</div>
-            <div class="dest-desc">Ancient ikat traditions from East Sumba, where each motif tells a story of clan, ancestors, and ritual.</div>
-            <div class="journey-tap-hint">Tap to explore →</div>
-          </div>
-          <div class="journey-card-back">
-            <div class="journey-back-title">What we find in Sumba</div>
-            <ul class="journey-back-items"><li>Hinggi cloth — ceremonial ikat with ancestral clan motifs in red and blue</li><li>Lau pahudu — women's wrap skirts with beaded hems</li><li>Hand-forged mamuli earrings in gold and silver</li><li>Carved stone grave markers (decorative miniatures)</li></ul>
-            <div class="journey-back-note">Best season: May – September</div>
-            <div class="journey-tap-hint" style="color:rgba(247,243,236,0.4)">Tap to close</div>
-          </div>
-        </div>
-      </div>
-      <div class="journey-card flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="journey-card-inner">
-          <div class="journey-card-front">
-            <span class="journey-icon">◈</span>
-            <div class="dest">Yogyakarta</div>
-            <div class="dest-sub">Batik tulis masters</div>
-            <div class="dest-desc">Hand-drawn batik from the workshops of Solo and Yogyakarta, using centuries-old wax-resist techniques.</div>
-            <div class="journey-tap-hint">Tap to explore →</div>
-          </div>
-          <div class="journey-card-back">
-            <div class="journey-back-title">What we find in Yogyakarta</div>
-            <ul class="journey-back-items"><li>Batik tulis scarves and sarongs — hand-drawn with a canting tool</li><li>Batik cap table runners in the parang and kawung patterns</li><li>Wayang kulit shadow puppets from master craftsmen</li><li>Brass and bronze gamelan instruments (small)</li></ul>
-            <div class="journey-back-note">Best season: Year-round</div>
-            <div class="journey-tap-hint" style="color:rgba(247,243,236,0.4)">Tap to close</div>
-          </div>
-        </div>
-      </div>
-      <div class="journey-card flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="journey-card-inner">
-          <div class="journey-card-front">
-            <span class="journey-icon">◈</span>
-            <div class="dest">Lombok</div>
-            <div class="dest-sub">Pottery &amp; weave</div>
-            <div class="dest-desc">Earthenware vessels from Penujak village and songket silk from Sukarara weavers.</div>
-            <div class="journey-tap-hint">Tap to explore →</div>
-          </div>
-          <div class="journey-card-back">
-            <div class="journey-back-title">What we find in Lombok</div>
-            <ul class="journey-back-items"><li>Hand-built Penujak earthenware — bowls, vases, water vessels</li><li>Rattan baskets and trays from Beleka village</li><li>Songket silk cloth with gold thread from Sukarara</li><li>Natural fibre placemats and table runners</li></ul>
-            <div class="journey-back-note">Best season: May – October</div>
-            <div class="journey-tap-hint" style="color:rgba(247,243,236,0.4)">Tap to close</div>
-          </div>
-        </div>
-      </div>
-      <div class="journey-card flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="journey-card-inner">
-          <div class="journey-card-front">
-            <span class="journey-icon">◈</span>
-            <div class="dest">Flores</div>
-            <div class="dest-sub">Ngada &amp; Ende craft</div>
-            <div class="dest-desc">Ikat from the Ngada highlands and hand-carved wood objects from traditional Flores villages.</div>
-            <div class="journey-tap-hint">Tap to explore →</div>
-          </div>
-          <div class="journey-card-back">
-            <div class="journey-back-title">What we find in Flores</div>
-            <ul class="journey-back-items"><li>Ngada ikat — earthy ochres and deep indigo on hand-spun cotton</li><li>Ende batik in coastal floral patterns</li><li>Hand-carved wooden figures and ritual objects</li><li>Woven pandanus leaf baskets and mats</li></ul>
-            <div class="journey-back-note">Best season: April – November</div>
-            <div class="journey-tap-hint" style="color:rgba(247,243,236,0.4)">Tap to close</div>
-          </div>
-        </div>
-      </div>
-      <div class="journey-card flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="journey-card-inner">
-          <div class="journey-card-front">
-            <span class="journey-icon">◈</span>
-            <div class="dest">Java</div>
-            <div class="dest-sub">Wayang &amp; brass</div>
-            <div class="dest-desc">Shadow puppets, keris handles, and cast brass objects from the royal courts of Central Java.</div>
-            <div class="journey-tap-hint">Tap to explore →</div>
-          </div>
-          <div class="journey-card-back">
-            <div class="journey-back-title">What we find in Java</div>
-            <ul class="journey-back-items"><li>Wayang kulit puppets — characters from the Ramayana and Mahabharata</li><li>Keris daggers with carved bone and wood handles</li><li>Cast brass offering dishes and ceremonial objects</li><li>Jepara carved teak furniture and serving boards</li></ul>
-            <div class="journey-back-note">Best season: Year-round</div>
-            <div class="journey-tap-hint" style="color:rgba(247,243,236,0.4)">Tap to close</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="divider"><span class="divider-mark">✦</span></div>
-    <p style="font-size:14px;line-height:1.9;color:var(--text-light);max-width:560px;">Want to join us on a journey? We offer private and small-group trips through Indonesia's most extraordinary craft regions. <a href="#" onclick="openTab('contact');return false;" style="color:var(--teal);text-decoration:underline;text-underline-offset:3px;">Reach out to plan yours.</a></p>
-  </div>
-
-  <!-- SHOP PANEL -->
-  <div class="panel" id="panel-shop">
-    <div class="panel-eyebrow">The Shop</div>
-    <h2 class="panel-title">Objects gathered<br><em>from the road.</em></h2>
-    <p class="panel-lead">Curated objects gathered from our travels — each one chosen for its craft, its story, and its singularity. Nothing here is mass-produced. Everything has a maker and a place.</p>
-
-    
-    <div class="featured-products">
-
-      <div class="prod-card" onclick="this.classList.toggle('flipped')">
-        <div class="prod-card-inner">
-          <div class="prod-card-front">
-            <div class="prod-img-wrap">
-              <img src="images/img07.jpg" alt="Parang Batik Tray" class="prod-img">
-              <div class="prod-reveal">Tap for story</div>
-            </div>
-            <div class="prod-info">
-              <div class="prod-name">Parang Batik Tray</div>
-              <div class="prod-price">IDR 485,000</div>
-            </div>
-          </div>
-          <div class="prod-card-back">
-            <div class="prod-story-origin">Yogyakarta, Java</div>
-            <div class="prod-story-name">Parang Batik Tray</div>
-            <div class="prod-story-text">The parang motif — one of batik's oldest patterns — traces a diagonal wave said to represent the ocean's power and the courage of Javanese warriors. This tray was hand-stamped by a third-generation batik maker in the workshop district of Laweyan, Solo. The muted earth tones come from natural indigo and soga brown dye, a technique unchanged for three centuries. Each tray carries slight variation — proof it was made by hand, not machine.</div>
-            <div class="prod-story-price">IDR 485,000</div>
-            <div class="prod-story-tap">Tap to close</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="prod-card" onclick="this.classList.toggle('flipped')">
-        <div class="prod-card-inner">
-          <div class="prod-card-front">
-            <div class="prod-img-wrap">
-              <img src="images/img09.jpg" alt="Lombok Woven Rattan Bowl" class="prod-img">
-              <div class="prod-reveal">Tap for story</div>
-            </div>
-            <div class="prod-info">
-              <div class="prod-name">Lombok Woven Rattan Bowl</div>
-              <div class="prod-price">IDR 680,000</div>
-            </div>
-          </div>
-          <div class="prod-card-back">
-            <div class="prod-story-origin">Lombok, West Nusa Tenggara</div>
-            <div class="prod-story-name">Woven Rattan Bowl</div>
-            <div class="prod-story-text">In the village of Beleka, rattan weaving is passed from mother to daughter before a girl turns ten. This bowl was woven by hand using rattan harvested from the forests of central Lombok, split into fine strips and coiled in the traditional Sasak method. The tight, even weave takes a skilled weaver two full days to complete. Strong enough for fruit, beautiful enough for the table — it ages gracefully, darkening gently with use and light.</div>
-            <div class="prod-story-price">IDR 680,000</div>
-            <div class="prod-story-tap">Tap to close</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="prod-card" onclick="this.classList.toggle('flipped')">
-        <div class="prod-card-inner">
-          <div class="prod-card-front">
-            <div class="prod-img-wrap">
-              <img src="images/img08.jpg" alt="Jepara Carved Serving Board" class="prod-img">
-              <div class="prod-reveal">Tap for story</div>
-            </div>
-            <div class="prod-info">
-              <div class="prod-name">Jepara Carved Serving Board</div>
-              <div class="prod-price">IDR 320,000</div>
-            </div>
-          </div>
-          <div class="prod-card-back">
-            <div class="prod-story-origin">Jepara, Central Java</div>
-            <div class="prod-story-name">Carved Serving Board</div>
-            <div class="prod-story-text">Jepara has been the wood-carving capital of Indonesia for five hundred years — its craftsmen once built the teak palaces of the Mataram sultanate. This serving board is carved from a single piece of teak, its border motif drawn freehand and chiselled by a master carver in a small family workshop off the main road. The floral medallion at the base is a signature of the Jepara school. Use it for bread, cheese, fruit — or simply let it sit on your table as the object it is.</div>
-            <div class="prod-story-price">IDR 320,000</div>
-            <div class="prod-story-tap">Tap to close</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="shop-cats">
-      <div class="shop-cat" onclick="openCatalog('textiles')">
-        <div class="cat-icon">◈</div>
-        <div>
-          <div class="cat-name">Craft &amp; Textiles</div>
-          <div class="cat-desc">Ikat, batik, hand-woven cloth from Java, Bali, Sumba &amp; Flores</div>
-          <div class="cat-price">From Rp 350.000</div>
-        </div>
-        <div class="cat-arrow">→</div>
-      </div>
-      <div class="shop-cat" onclick="openCatalog('objects')">
-        <div class="cat-icon">◈</div>
-        <div>
-          <div class="cat-name">Objects</div>
-          <div class="cat-desc">Ceramics, baskets, carved wood, brass &amp; bronze pieces</div>
-          <div class="cat-price">From Rp 280.000</div>
-        </div>
-        <div class="cat-arrow">→</div>
-      </div>
-      <div class="shop-cat" onclick="openCatalog('wearables')">
-        <div class="cat-icon">◈</div>
-        <div>
-          <div class="cat-name">Wearables</div>
-          <div class="cat-desc">Scarves, sarongs, handmade jewellery from village artisans</div>
-          <div class="cat-price">From Rp 220.000</div>
-        </div>
-        <div class="cat-arrow">→</div>
-      </div>
-      <div class="shop-cat" onclick="openCatalog('home')">
-        <div class="cat-icon">◈</div>
-        <div>
-          <div class="cat-name">For the Home</div>
-          <div class="cat-desc">Cushions, runners, table pieces, vessels for the considered interior</div>
-          <div class="cat-price">From Rp 450.000</div>
-        </div>
-        <div class="cat-arrow">→</div>
-      </div>
-    </div>
-
-    <div class="divider"><span class="divider-mark">✦</span></div>
-    <p style="font-size:13px;color:var(--text-light);line-height:1.8;">All objects are available at <strong style="color:var(--teal);">Yunic Craft Shop</strong> in Bali, or by request. We ship carefully worldwide. <a href="#" onclick="openTab('contact');return false;" style="color:var(--gold);">Enquire about availability →</a></p>
-  </div>
-
-  <!-- GIFT SETS PANEL -->
-  <div class="panel" id="panel-gifts">
-    <div class="panel-eyebrow">Gift Sets</div>
-    <h2 class="panel-title">Thoughtfully<br><em>assembled.</em></h2>
-    <p class="panel-lead">For someone who appreciates craft, provenance, and the beauty of the handmade. Each gift set is assembled from our travels — a curated combination, beautifully wrapped in natural materials.</p>
-
-    <div class="gift-grid">
-      <div class="gift-card flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="gift-card-inner">
-          <div class="gift-card-front-flip">
-            <img class="gift-card-img" src="images/img06.jpg" alt="The Textile Edit">
-            <div class="gift-card-body">
-              <div class="gift-name">The Textile Edit</div>
-              <div class="gift-detail">A selection of hand-woven ikat and batik pieces — scarves, a small textile, a maker's card</div>
-              <div class="gift-price">From Rp 950.000</div>
-              <div class="gift-tap-hint">Tap to see what's inside →</div>
-            </div>
-          </div>
-          <div class="gift-card-back-flip">
-            <div class="gift-back-title">What's included</div>
-            <ul class="gift-back-items"><li>1 hand-woven ikat scarf (Sumba or Flores)</li><li>1 batik tulis square cloth (Yogyakarta)</li><li>1 small batik pouch</li><li>A maker's card with the artisan's story</li><li>Wrapped in natural muslin with a wax seal</li></ul>
-            <div class="gift-back-note">Suitable for: textile lovers, travellers, anyone who appreciates craft</div>
-            <div class="gift-price" style="color:var(--gold-light);margin-top:12px">From Rp 950.000</div>
-            <div class="gift-tap-hint" style="color:rgba(247,243,236,0.4);margin-top:8px">Tap to close</div>
-          </div>
-        </div>
-      </div>
-      <div class="gift-card flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="gift-card-inner">
-          <div class="gift-card-front-flip">
-            <img class="gift-card-img" src="images/img05.jpg" alt="Artisan Table">
-            <div class="gift-card-body">
-              <div class="gift-name">Artisan Table</div>
-              <div class="gift-detail">Hand-thrown ceramics, woven placemats, and a brass object for the table</div>
-              <div class="gift-price">From Rp 1.200.000</div>
-              <div class="gift-tap-hint">Tap to see what's inside →</div>
-            </div>
-          </div>
-          <div class="gift-card-back-flip">
-            <div class="gift-back-title">What's included</div>
-            <ul class="gift-back-items"><li>2 hand-thrown Lombok ceramic bowls</li><li>2 woven rattan placemats (Beleka)</li><li>1 brass flower dish (Yogyakarta)</li><li>A Yunic recipe card — one Indonesian dish to cook at home</li><li>Wrapped in natural linen</li></ul>
-            <div class="gift-back-note">Suitable for: hosts, home cooks, design lovers</div>
-            <div class="gift-price" style="color:var(--gold-light);margin-top:12px">From Rp 1.200.000</div>
-            <div class="gift-tap-hint" style="color:rgba(247,243,236,0.4);margin-top:8px">Tap to close</div>
-          </div>
-        </div>
-      </div>
-      <div class="gift-card flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="gift-card-inner">
-          <div class="gift-card-front-flip">
-            <img class="gift-card-img" src="images/img01.jpg" alt="The Traveller">
-            <div class="gift-card-body">
-              <div class="gift-name">The Traveller</div>
-              <div class="gift-detail">A journey kit — batik pouch, hand-dyed scarf, small object, and a Yunic journal</div>
-              <div class="gift-price">From Rp 850.000</div>
-              <div class="gift-tap-hint">Tap to see what's inside →</div>
-            </div>
-          </div>
-          <div class="gift-card-back-flip">
-            <div class="gift-back-title">What's included</div>
-            <ul class="gift-back-items"><li>1 hand-dyed ikat scarf (Bali or Lombok)</li><li>1 batik zip pouch for travel</li><li>1 small carved object or brass piece</li><li>A Yunic travel journal — blank, linen-covered</li><li>Rolled and tied with natural cord</li></ul>
-            <div class="gift-back-note">Suitable for: travellers, curious souls, anyone heading to Indonesia</div>
-            <div class="gift-price" style="color:var(--gold-light);margin-top:12px">From Rp 850.000</div>
-            <div class="gift-tap-hint" style="color:rgba(247,243,236,0.4);margin-top:8px">Tap to close</div>
-          </div>
-        </div>
-      </div>
-      <div class="gift-card flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="gift-card-inner">
-          <div class="gift-card-front-flip">
-            <img class="gift-card-img" src="images/img03.jpg" alt="Home & Living">
-            <div class="gift-card-body">
-              <div class="gift-name">Home &amp; Living</div>
-              <div class="gift-detail">Cushion cover, table runner, and a handmade vessel — all from one region</div>
-              <div class="gift-price">From Rp 1.500.000</div>
-              <div class="gift-tap-hint">Tap to see what's inside →</div>
-            </div>
-          </div>
-          <div class="gift-card-back-flip">
-            <div class="gift-back-title">What's included</div>
-            <ul class="gift-back-items"><li>1 ikat cushion cover 50×50cm (Sumba)</li><li>1 hand-woven table runner 40×160cm (Lombok)</li><li>1 handmade ceramic or rattan vessel</li><li>A region card — the story of where everything came from</li><li>Gift-wrapped in natural cloth with raffia tie</li></ul>
-            <div class="gift-back-note">Suitable for: interior lovers, housewarming, special occasions</div>
-            <div class="gift-price" style="color:var(--gold-light);margin-top:12px">From Rp 1.500.000</div>
-            <div class="gift-tap-hint" style="color:rgba(247,243,236,0.4);margin-top:8px">Tap to close</div>
-          </div>
-        </div>
-      </div>
-      <div class="gift-card flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="gift-card-inner">
-          <div class="gift-card-front-flip">
-            <img class="gift-card-img" src="images/img04.jpg" alt="Bespoke Set">
-            <div class="gift-card-body">
-              <div class="gift-name">Bespoke Set</div>
-              <div class="gift-detail">We curate a gift set to your budget and the recipient — tell us about them</div>
-              <div class="gift-price">By arrangement</div>
-              <div class="gift-tap-hint">Tap to see what's inside →</div>
-            </div>
-          </div>
-          <div class="gift-card-back-flip">
-            <div class="gift-back-title">What's included</div>
-            <ul class="gift-back-items"><li>You choose the budget — we choose the objects</li><li>We consider the recipient: their taste, their home, their story</li><li>All pieces sourced from our current collection</li><li>Beautifully wrapped with a handwritten card</li><li>Available for personal and corporate gifting</li></ul>
-            <div class="gift-back-note">Contact us to begin: hello@yunicshop.com</div>
-            <div class="gift-price" style="color:var(--gold-light);margin-top:12px">By arrangement</div>
-            <div class="gift-tap-hint" style="color:rgba(247,243,236,0.4);margin-top:8px">Tap to close</div>
-          </div>
-        </div>
-      </div>
-      <div class="gift-card flip-card" onclick="this.classList.toggle('flipped')">
-        <div class="gift-card-inner">
-          <div class="gift-card-front-flip">
-            <img class="gift-card-img" src="images/img02.jpg" alt="Dining Experience">
-            <div class="gift-card-body">
-              <div class="gift-name">Dining Experience</div>
-              <div class="gift-detail">A gift voucher for Yunic Dining — a private Indonesian table for two</div>
-              <div class="gift-price">From Rp 2.000.000</div>
-              <div class="gift-tap-hint">Tap to see what's inside →</div>
-            </div>
-          </div>
-          <div class="gift-card-back-flip">
-            <div class="gift-back-title">What's included</div>
-            <ul class="gift-back-items"><li>A private dining experience at Yunic Dining, Bali</li><li>Indonesian tasting menu — 5 to 7 courses</li><li>Paired with Indonesian natural wines or juices</li><li>Table set with Yunic craft objects</li><li>Presented as a beautifully printed voucher in an envelope</li></ul>
-            <div class="gift-back-note">Available for 2, 4, or 6 guests. Book at least 3 days in advance.</div>
-            <div class="gift-price" style="color:var(--gold-light);margin-top:12px">From Rp 2.000.000</div>
-            <div class="gift-tap-hint" style="color:rgba(247,243,236,0.4);margin-top:8px">Tap to close</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="divider"><span class="divider-mark">✦</span></div>
-    <p style="font-size:13px;color:var(--text-light);line-height:1.8;">All gift sets include a handwritten card and are wrapped in natural cloth. We also create corporate gift sets for companies and hospitality groups. <a href="#" onclick="openTab('contact');return false;" style="color:var(--gold);">Get in touch →</a></p>
-  </div>
-
-  <!-- JOURNAL PANEL -->
-  <div class="panel" id="panel-journal">
-    <div class="panel-eyebrow">The Journal</div>
-    <h2 class="panel-title">From the road,<br><em>in pictures.</em></h2>
-    <p class="journal-intro">This is where we share the journeys — the villages, the weavers, the markets, the meals. Photos and short films from the places where we find what we bring back to you.</p>
-
-    <div class="journal-grid">
-      <div class="journal-card">
-        <div class="journal-thumb"><img src="images/img_sumba.jpg" alt="Sumba weavers"></div>
-        <div class="journal-body">
-          <div class="journal-location">Sumba, East Indonesia</div>
-          <div class="journal-title">The women who weave the ancestors into cloth</div>
-          <div class="journal-excerpt">In the village of Prailiu, ikat is not craft — it is memory, genealogy, and ritual woven into thread.</div>
-          <div class="journal-date">March 2025</div>
-        </div>
-      </div>
-      <div class="journal-card">
-        <div class="journal-thumb"><img src="images/img_lombok.jpg" alt="Penujak potters"></div>
-        <div class="journal-body">
-          <div class="journal-location">Lombok, Indonesia</div>
-          <div class="journal-title">Penujak: the village that shapes earth into form</div>
-          <div class="journal-excerpt">Three generations of potters, working with river clay and open fires, making vessels that breathe.</div>
-          <div class="journal-date">January 2025</div>
-        </div>
-      </div>
-      <div class="journal-card">
-        <div class="journal-thumb"><img src="images/img_yogya.jpg" alt="Yogyakarta batik breakfast"></div>
-        <div class="journal-body">
-          <div class="journal-location">Yogyakarta, Java</div>
-          <div class="journal-title">A long breakfast in the batik quarter</div>
-          <div class="journal-excerpt">Before the workshop opens, there is always a meal — gudeg, tofu, and sweet tea in a courtyard.</div>
-          <div class="journal-date">November 2024</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="journal-upload">
-      <div class="upload-icon">📷</div>
-      <p>This section will be updated with photos and videos from our travels.<br>Each journey brings new stories.</p>
-    </div>
-  </div>
-
-  <!-- CONTACT PANEL -->
-  <div class="panel" id="panel-contact">
-    <div class="panel-eyebrow">Get in Touch</div>
-    <h2 class="panel-title">Let's talk about<br><em>the journey.</em></h2>
-    <p class="panel-lead">Whether you're looking for a specific piece, planning a private dinner, or curious about joining us on a journey — we'd love to hear from you.</p>
-
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h3>Yunic Craft Shop</h3>
-        <div class="contact-detail">
-          <div class="contact-label">Location</div>
-          <div class="contact-value">Bali, Indonesia<br>Address shared on enquiry</div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-label">Email</div>
-          <div class="contact-value">hello@yunicshop.com</div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-label">Instagram</div>
-          <div class="contact-value">@yunic_crafts</div>
-        </div>
-        <div class="contact-detail">
-          <div class="contact-label">WhatsApp</div>
-          <div class="contact-value">Available on request</div>
-        </div>
-        <div class="divider" style="margin:32px 0;"><span class="divider-mark">✦</span></div>
-        <p style="font-size:13px;color:var(--text-light);line-height:1.8;font-style:italic;">We reply to all messages personally. Give us a day or two — we may be in the field.</p>
-      </div>
-
-      <div>
-        <div class="contact-form">
-          <div class="form-field">
-            <label class="form-label">Your Name</label>
-            <input class="form-input" type="text" placeholder="Name">
-          </div>
-          <div class="form-field">
-            <label class="form-label">Email Address</label>
-            <input class="form-input" type="email" placeholder="your@email.com">
-          </div>
-          <div class="form-field">
-            <label class="form-label">What Can We Help With?</label>
-            <input class="form-input" type="text" placeholder="Shop enquiry, Gift set, Journey, Dining…">
-          </div>
-          <div class="form-field">
-            <label class="form-label">Message</label>
-            <textarea class="form-textarea" placeholder="Tell us what you're looking for…"></textarea>
-          </div>
-          <button class="btn-primary" style="align-self:flex-start;">Send Message</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-</section>
-
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <div class="logo">
-          <span class="logo-main">Yunic</span>
-          <span class="logo-sub">Craft Shop · Indonesian Journey · Dining</span>
-        </div>
-        <p>Objects gathered from the road. A table set with intention. An Indonesian journey that brings it all together.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Navigate</h4>
-        <a onclick="openTab('journey')">Journey</a>
-        <a onclick="openTab('shop')">Shop</a>
-        <a onclick="openTab('gifts')">Gift Sets</a>
-        <a onclick="openTab('journal')">Journal</a>
-        <a onclick="openTab('contact')">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Connect</h4>
-        <a>Instagram</a>
-        <a>WhatsApp</a>
-        <a>hello@yunicshop.com</a>
-        <a>yunicshop.com</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 Yunic Craft Shop · Bali, Indonesia</span>
-      <span>Objects from the journey. Taste the story.</span>
-    </div>
-  </div>
-</footer>
-
-<script src="js/main.js"></script>
-
-
-<!-- ── CATALOG MODAL ── -->
-<div class="catalog-overlay" id="catalogOverlay" onclick="closeCatalog()"></div>
-<div class="catalog-modal" id="catalogModal">
-  <div class="catalog-modal-header">
-    <div>
-      <div class="catalog-modal-label" id="catalogLabel">Category</div>
-      <h3 class="catalog-modal-title" id="catalogTitle">Products</h3>
-    </div>
-    <button class="catalog-close" onclick="closeCatalog()">✕</button>
-  </div>
-  <div class="catalog-grid" id="catalogGrid"></div>
-</div>
-
-<!-- ── BASKET PANEL ── -->
-<div class="basket-overlay" id="basketOverlay" onclick="closeBasket()"></div>
-<div class="basket-panel" id="basketPanel">
-  <div class="basket-header">
-    <h3>Your Basket</h3>
-    <button class="catalog-close" onclick="closeBasket()">✕</button>
-  </div>
-  <div class="basket-items" id="basketItems">
-    <p class="basket-empty">Your basket is empty.</p>
-  </div>
-  <div class="basket-footer" id="basketFooter" style="display:none">
-    <div class="basket-total">
-      Total: <span id="basketTotal">Rp 0</span>
-    </div>
-    <button class="basket-whatsapp" onclick="checkoutWhatsApp()">
-      Order via WhatsApp →
-    </button>
-    <p class="basket-note">We'll confirm availability and arrange payment with you directly.</p>
-  </div>
-</div>
 </body>
 </html>
