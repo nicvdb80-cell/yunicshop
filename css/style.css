@@ -56,38 +56,6 @@
     display: block;
   }
 
-  nav {
-    display: flex;
-    gap: 0;
-    align-items: center;
-  }
-
-  nav a {
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--text-light);
-    text-decoration: none;
-    padding: 8px 16px;
-    position: relative;
-    transition: color 0.2s;
-    cursor: pointer;
-  }
-  nav a::after {
-    content: '';
-    position: absolute;
-    bottom: 4px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 1px;
-    background: var(--gold);
-    transition: width 0.3s;
-  }
-  nav a:hover { color: var(--teal); }
-  nav a:hover::after { width: calc(100% - 32px); }
-  nav a.active { color: var(--teal); }
-  nav a.active::after { width: calc(100% - 32px); }
 
   /* ── HERO ── */
   .hero {
@@ -749,7 +717,6 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     header { padding: 0 20px; }
-    nav { display: none; }
     .hero-inner { padding: 60px 24px; }
     .panel { padding: 0 24px; }
     .journey-grid { grid-template-columns: 1fr; }
