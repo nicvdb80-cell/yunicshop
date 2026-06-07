@@ -675,6 +675,83 @@
     opacity: 0.45;
   }
 
+  /* ── HEADER RIGHT (basket + hamburger) ── */
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  /* ── HAMBURGER BUTTON ── */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: 1px solid rgba(180,147,77,0.35);
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 8px;
+    transition: border-color 0.2s;
+    flex-shrink: 0;
+  }
+  .hamburger:hover { border-color: var(--gold); }
+  .hamburger span {
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    background: var(--teal);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+    transform-origin: center;
+  }
+  /* X state when open */
+  .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  /* ── MOBILE DROPDOWN MENU ── */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 72px;
+    right: 0;
+    width: 220px;
+    background: #F7F3EC;
+    border-left: 1px solid rgba(180,147,77,0.2);
+    border-bottom: 1px solid rgba(180,147,77,0.2);
+    z-index: 99;
+    flex-direction: column;
+    padding: 8px 0;
+    box-shadow: -4px 4px 24px rgba(0,0,0,0.08);
+  }
+  .mobile-menu.open { display: flex; }
+
+  .mobile-nav-link {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 14px 28px;
+    cursor: pointer;
+    transition: color 0.2s, background 0.2s;
+    border: none;
+    background: none;
+    display: block;
+  }
+  .mobile-nav-link:hover { color: var(--teal); background: rgba(180,147,77,0.06); }
+  .mobile-nav-dining {
+    color: var(--teal);
+    border-top: 1px solid rgba(180,147,77,0.15);
+    margin-top: 4px;
+    padding-top: 14px;
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     header { padding: 0 20px; }
@@ -689,6 +766,12 @@
     .footer-top { grid-template-columns: 1fr; gap: 32px; }
     .stats-bar { gap: 32px; padding: 28px 24px; }
     .tab-btn { padding: 14px 18px; font-size: 10px; }
+  }
+
+  /* ── DESKTOP: hide hamburger ── */
+  @media (min-width: 769px) {
+    .hamburger { display: none; }
+    .mobile-menu { display: none !important; }
   }
 
   /* ── FEATURED PRODUCTS ── */
@@ -1417,3 +1500,4 @@
     }
     .dining-banner-right { display: none; }
   }
+
