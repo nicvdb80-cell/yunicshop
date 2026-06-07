@@ -42,23 +42,18 @@
 
   .logo {
     display: flex;
-    flex-direction: column;
-    line-height: 1;
+    align-items: center;
+    text-decoration: none;
   }
-  .logo-main {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 22px;
-    font-weight: 500;
-    color: var(--teal);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+  .logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
   }
-  .logo-sub {
-    font-size: 9px;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-top: 2px;
+  .logo-img {
+    height: 48px;
+    width: auto;
+    display: block;
   }
 
   nav {
@@ -639,8 +634,7 @@
     gap: 48px;
     margin-bottom: 48px;
   }
-  .footer-brand .logo-main { color: var(--ivory); font-size: 20px; }
-  .footer-brand .logo-sub { color: var(--gold-light); }
+  .footer-logo-img { height: 44px; width: auto; opacity: 0.9; }
   .footer-brand p {
     font-size: 13px;
     line-height: 1.8;
@@ -768,9 +762,8 @@
     .tab-btn { padding: 14px 18px; font-size: 10px; }
   }
 
-  /* ── DESKTOP: hide hamburger ── */
+  /* ── DESKTOP: nav visible, hamburger always shown ── */
   @media (min-width: 769px) {
-    .hamburger { display: none; }
     .mobile-menu { display: none !important; }
   }
 
