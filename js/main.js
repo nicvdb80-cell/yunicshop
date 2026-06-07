@@ -244,3 +244,8 @@ document.addEventListener('click', function(e) {
   }
 });
 
+// ── SCROLL TO TOP (logo click) ──
+function scrollToTop(e) {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
