@@ -207,3 +207,40 @@ function checkoutWhatsApp() {
   const url = `https://wa.me/62xxxxxxxxxx?text=${encodeURIComponent(msg)}`;
   window.open(url, '_blank');
 }
+
+// ── MOBILE MENU ──
+function toggleMobileMenu() {
+  var menu = document.getElementById('mobileMenu');
+  var btn   = document.getElementById('hamburger');
+  var open  = menu.classList.toggle('open');
+  btn.classList.toggle('open', open);
+  btn.setAttribute('aria-expanded', open);
+  menu.setAttribute('aria-hidden', !open);
+}
+
+function mobileNavClick(el) {
+  var tabId = el.getAttribute('data-tab');
+  if (tabId) openTab(tabId);
+  // Close menu after tap
+  var menu = document.getElementById('mobileMenu');
+  var btn  = document.getElementById('hamburger');
+  menu.classList.remove('open');
+  btn.classList.remove('open');
+  btn.setAttribute('aria-expanded', 'false');
+  menu.setAttribute('aria-hidden', 'true');
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('mobileMenu');
+  var btn  = document.getElementById('hamburger');
+  if (menu && menu.classList.contains('open')) {
+    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+      menu.classList.remove('open');
+      btn.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+    }
+  }
+});
+
