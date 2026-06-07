@@ -3,8 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yunic</title>
-<style>body{margin:0;background:#F7F3EC;}</style>
+<title>Yunic · Coming Soon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --cream: #F7F3EC; --teal: #2C4A52; --gold: #B4934D; }
+  html, body { height: 100%; background: var(--cream); }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 24px;
+    text-align: center;
+  }
+  .logo-wrap { margin-bottom: 40px; }
+  .logo-wrap img { height: 80px; width: auto; }
+  .divider {
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 40px;
+    opacity: 0.6;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    color: var(--teal);
+  }
+  h1 em { font-style: italic; color: var(--gold); }
+</style>
 </head>
-<body></body>
+<body>
+  <div class="logo-wrap">
+    <img src="images/yunic_logo.png" alt="Yunic">
+  </div>
+  <div class="divider"></div>
+  <h1>Something beautiful<br>is <em>coming soon.</em></h1>
+</body>
 </html>
