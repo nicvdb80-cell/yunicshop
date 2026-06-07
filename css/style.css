@@ -691,7 +691,7 @@
     padding: 8px 0;
     box-shadow: -4px 4px 24px rgba(0,0,0,0.08);
   }
-  .mobile-menu.open { display: flex; }
+  .mobile-menu.open { display: flex !important; }
 
   .mobile-nav-link {
     font-size: 11px;
@@ -729,10 +729,7 @@
     .tab-btn { padding: 14px 18px; font-size: 10px; }
   }
 
-  /* ── DESKTOP: nav visible, hamburger always shown ── */
-  @media (min-width: 769px) {
-    .mobile-menu { display: none !important; }
-  }
+  /* ── DESKTOP: hamburger dropdown allowed ── */
 
   /* ── FEATURED PRODUCTS ── */
   .featured-products {
